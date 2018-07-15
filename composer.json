@@ -1,0 +1,17 @@
+{
+    "require": {
+        "league/climate": "^3.4",
+        "joshcam/mysqli-database-class": "^2.9",
+        "monolog/monolog": "^1.23",
+        "filp/whoops": "^2.2",
+        "vlucas/phpdotenv": "^2.5",
+        "fzaninotto/faker": "^1.8",
+        "league/pipeline": "^0.3.0"
+    },
+    "autoload": {
+        "classmap": [
+            "Middleware",
+            "Interfase"
+        ]
+    }
+}
