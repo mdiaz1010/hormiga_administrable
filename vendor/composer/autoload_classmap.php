@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ColegioMiddleware\\ColegioInterfase' => $baseDir . '/Interfase/ColegioInterfase.php',
+    'HormigaMiddleware\\ColegioInterfase' => $baseDir . '/Interfase/ColegioInterfase.php',
     'HormigaMiddleware\\ColegioMiddleware' => $baseDir . '/Middleware/ColegioMiddleware.php',
     'HormigaMiddleware\\ConstantsInterfase' => $baseDir . '/Interfase/ConstantsInterfase.php',
     'HormigaMiddleware\\Middleware' => $baseDir . '/Middleware/Middleware.php',

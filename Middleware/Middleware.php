@@ -56,14 +56,6 @@ class Middleware implements ConstantsInterfase
         $this->climate->backgroundBlack()->white()->table($names);
     }
 
-    public function generar_notas_aleatorias()
-    {
 
-    }
-
-    public function generar_horario()
-    {
-
-    }
 
 }

@@ -9,6 +9,7 @@ class ComposerStaticInit051ed0b84acbe37deb6dba92ba0f0eca
     public static $files = array (
         '9c9a81795c809f4710dd20bec1e349df' => __DIR__ . '/..' . '/joshcam/mysqli-database-class/MysqliDb.php',
         '94df122b6b32ca0be78d482c26e5ce00' => __DIR__ . '/..' . '/joshcam/mysqli-database-class/dbObject.php',
+        '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -31,6 +32,7 @@ class ComposerStaticInit051ed0b84acbe37deb6dba92ba0f0eca
         'L' => 
         array (
             'League\\Pipeline\\' => 16,
+            'League\\Csv\\' => 11,
             'League\\CLImate\\' => 15,
         ),
         'F' => 
@@ -40,6 +42,10 @@ class ComposerStaticInit051ed0b84acbe37deb6dba92ba0f0eca
         'D' => 
         array (
             'Dotenv\\' => 7,
+        ),
+        'C' => 
+        array (
+            'Curl\\' => 5,
         ),
     );
 
@@ -64,6 +70,10 @@ class ComposerStaticInit051ed0b84acbe37deb6dba92ba0f0eca
         array (
             0 => __DIR__ . '/..' . '/league/pipeline/src',
         ),
+        'League\\Csv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/csv/src',
+        ),
         'League\\CLImate\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/climate/src',
@@ -76,10 +86,14 @@ class ComposerStaticInit051ed0b84acbe37deb6dba92ba0f0eca
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
+        'Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl',
+        ),
     );
 
     public static $classMap = array (
-        'ColegioMiddleware\\ColegioInterfase' => __DIR__ . '/../..' . '/Interfase/ColegioInterfase.php',
+        'HormigaMiddleware\\ColegioInterfase' => __DIR__ . '/../..' . '/Interfase/ColegioInterfase.php',
         'HormigaMiddleware\\ColegioMiddleware' => __DIR__ . '/../..' . '/Middleware/ColegioMiddleware.php',
         'HormigaMiddleware\\ConstantsInterfase' => __DIR__ . '/../..' . '/Interfase/ConstantsInterfase.php',
         'HormigaMiddleware\\Middleware' => __DIR__ . '/../..' . '/Middleware/Middleware.php',

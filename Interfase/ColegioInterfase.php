@@ -1,6 +1,6 @@
 <?php
 
-namespace ColegioMiddleware;
+namespace HormigaMiddleware;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -37,18 +37,52 @@ class ColegioInterfase implements ConstantsInterfase
         ]);
     }
 
-    public function consultar_docentes()
-    {
 
-        $cols = Array ("id_persona", "nom_usuario", "clav_usuario");
-        $db->where ("role_usuario",4);
-        $users = $db->get ("maeusuarios", null, $cols);
+    public function consultar_grado_seccion()
+    {
+        $db=$this->database;
+        $cols = Array ("id_grado,id_seccion");
+        $db->orderBy("id_grado","asc");
+        $db->orderBy("id_seccion","asc");
+        $db->where ("estado",1);
+        $users =  $db->setQueryOption('DISTINCT')->get ("relaula", null, $cols);
         if ($db->count > 0)
-            foreach ($users as $user) {
-                $this->climate->out("Nombre: {$user['nom_usuario']}");
-            }
+            return $users;
+    }
+    public function consultar_aula($grado,$seccion)
+    {
+        $db=$this->database;
+        $cols = Array ("id_curso,id_profesor");
+        $db->orderBy("id_curso","asc");
+        $db->orderBy("id_profesor","asc");
+        $db->where ("estado",1);
+        $db->where ("id_grado",$grado);
+        $db->where ("id_seccion",$seccion);
+        $users =  $db->setQueryOption('DISTINCT')->get ("relaula", null, $cols);
+        if ($db->count > 0)
+            return $users;
+
+            #var_dump(array_values(array_unique($grado))); die();
     }
 
+    public function consultar_notas($curso)
+    {
+        $db=$this->database;
+        $cols = Array ("ma.id,ma.nom_notas,ma.des_notas");
+        $db->where ("rl.estado",1);
+        $db->where ("rl.ano",date('Y'));
+        $db->where ("rl.id_curso",$curso);
+        $db->join("rel_curso_nota rl", "ma.id=rl.id_nota", "INNER");
+        return $db->get ("maenotas ma", null, $cols);
+    }
+
+    public function consultar_bimestre()
+    {
+        $db=$this->database;
+        $cols = Array ("id,nom_bimestre");
+        $db->where ("ano",date('Y'));
+        return $db->get ("maebimestre ma", null, $cols);
+    }
 }
 
 ?>

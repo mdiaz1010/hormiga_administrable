@@ -11,7 +11,9 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Pipeline\\' => array($vendorDir . '/league/pipeline/src'),
+    'League\\Csv\\' => array($vendorDir . '/league/csv/src'),
     'League\\CLImate\\' => array($vendorDir . '/league/climate/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Curl\\' => array($vendorDir . '/php-curl-class/php-curl-class/src/Curl'),
 );

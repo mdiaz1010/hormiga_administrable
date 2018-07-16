@@ -33,8 +33,19 @@ class ColegioMiddleware extends Middleware
         call_user_func([$this, $this->climate->arguments->get('function')]);
     }
 
-    public function consular_profesor()
+    public function consultar_docentes()
     {
+        $list_grado_seccion= $this->ColegioInterfase->consultar_grado_seccion();
+        foreach($list_grado_seccion as $key => $grado_seccion):
+            $list_aula     = $this->ColegioInterfase->consultar_aula($grado_seccion['id_grado'],$grado_seccion['id_seccion']);
+        endforeach;
+        $list_notas     = $this->ColegioInterfase->consultar_notas();
+        $list_bimestre  = $this->ColegioInterfase->consultar_bimestre();
+
+    }
+    public function consultar_profesor()
+    {
+
         $update = $this->ColegioInterfase->consultar_docentes();
     }
 }
