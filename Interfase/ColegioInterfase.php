@@ -83,6 +83,17 @@ class ColegioInterfase implements ConstantsInterfase
         $db->where ("ano",date('Y'));
         return $db->get ("maebimestre ma", null, $cols);
     }
+
+    public function insertar_rel_notas_detalle($list_detalle)
+    {
+        $message_ok = self::IS_OK . " Notas en el grado ".$list_detalle['id_grado']." , curso ".$list_detalle['id_curso'];
+        $db=$this->database;
+        $rel_notas_detalle = $db->insert ('rel_notas_detalle', $list_detalle);
+        if ($rel_notas_detalle)
+            $this->climate->info($message_ok);
+        else
+            $this->climate->info(self::IS_KO.' '.$db->getLastError());
+    }
 }
 
 ?>
